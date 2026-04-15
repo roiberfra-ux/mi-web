@@ -20,6 +20,17 @@ background:#f5f5f5;
 color:#222;
 }
 
+/* 🔥 BARRA PROGRESO */
+#progressBar {
+position:fixed;
+top:0;
+left:0;
+width:0%;
+height:4px;
+background:#00ffcc;
+z-index:9999;
+}
+
 header {
 background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
 padding:30px;
@@ -74,10 +85,16 @@ border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
+/* 🔥 HOVER IMÁGENES */
 img {
 width:100%;
 margin:20px 0;
 border-radius:8px;
+transition:0.3s;
+}
+
+img:hover {
+transform:scale(1.03);
 }
 
 .ads {
@@ -123,10 +140,18 @@ margin-top:30px;
 
 <body>
 
+<!-- 🔥 BARRA -->
+<div id="progressBar"></div>
+
 <header>
 <h1>Zona Gaming Pro</h1>
 <p>Guías, trucos y estrategias de Free Fire</p>
 </header>
+
+<!-- 🔥 AVISO -->
+<div style="background:#fff3cd;color:#856404;padding:10px;text-align:center;font-size:14px;">
+Este sitio ofrece información educativa sobre Free Fire. No está afiliado oficialmente con el juego.
+</div>
 
 <nav>
 <a href="index.html">Inicio</a>
@@ -253,6 +278,16 @@ border-radius:50%;
 text-decoration:none;
 font-weight:bold;
 ">↑</a>
+
+<!-- 🔥 SCRIPT BARRA -->
+<script>
+window.onscroll = function() {
+let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+let scrolled = (winScroll / height) * 100;
+document.getElementById("progressBar").style.width = scrolled + "%";
+};
+</script>
 
 </body>
 </html>
