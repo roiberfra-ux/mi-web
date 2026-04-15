@@ -135,6 +135,44 @@ padding:20px;
 margin-top:30px;
 }
 
+/* 📱 RESPONSIVE (AÑADIDO) */
+@media (max-width: 768px) {
+
+.main {
+flex-direction: column;
+padding:10px;
+}
+
+.content {
+width:100%;
+padding:15px;
+}
+
+.sidebar {
+width:100%;
+padding:10px;
+}
+
+nav a {
+display:block;
+margin:8px 0;
+}
+
+img {
+width:100%;
+height:auto;
+}
+
+input {
+width:90% !important;
+}
+
+header h1 {
+font-size:22px;
+}
+
+}
+
 </style>
 </head>
 
@@ -266,20 +304,10 @@ Este sitio ofrece información educativa sobre Free Fire. No está afiliado ofic
 <p>© 2026 Zona Gaming Pro</p>
 </footer>
 
-<!-- 🔝 BOTÓN FLOTANTE -->
-<a href="#" style="
-position:fixed;
-bottom:20px;
-right:20px;
-background:#00ffcc;
-color:#000;
-padding:10px 15px;
-border-radius:50%;
-text-decoration:none;
-font-weight:bold;
-">↑</a>
+<!-- 🔝 BOTÓN -->
+<a href="#" style="position:fixed;bottom:20px;right:20px;background:#00ffcc;color:#000;padding:10px 15px;border-radius:50%;text-decoration:none;font-weight:bold;">↑</a>
 
-<!-- 🔥 SCRIPT BARRA -->
+<!-- 🔥 SCRIPT -->
 <script>
 window.onscroll = function() {
 let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
