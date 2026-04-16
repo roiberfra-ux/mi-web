@@ -56,6 +56,50 @@ nav a:hover {
 color:#00ffcc;
 }
 
+/* 🔥 BANNER NUEVO */
+.banner {
+position:relative;
+height:320px;
+background:url("banner.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.banner::before {
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.banner-content {
+position:relative;
+z-index:2;
+animation:fadeIn 1.5s ease;
+}
+
+.banner h2 {
+font-size:34px;
+margin:0;
+}
+
+.banner p {
+color:#ddd;
+margin-top:10px;
+}
+
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(20px);}
+to {opacity:1; transform:translateY(0);}
+}
+
 .main {
 display:flex;
 max-width:1100px;
@@ -85,7 +129,6 @@ border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
-/* 🔥 HOVER IMÁGENES */
 img {
 width:100%;
 margin:20px 0;
@@ -135,7 +178,7 @@ padding:20px;
 margin-top:30px;
 }
 
-/* 📱 RESPONSIVE (AÑADIDO) */
+/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
 
 .main {
@@ -158,16 +201,11 @@ display:block;
 margin:8px 0;
 }
 
-img {
-width:100%;
-height:auto;
+.banner {
+height:200px;
 }
 
-input {
-width:90% !important;
-}
-
-header h1 {
+.banner h2 {
 font-size:22px;
 }
 
@@ -178,7 +216,6 @@ font-size:22px;
 
 <body>
 
-<!-- 🔥 BARRA -->
 <div id="progressBar"></div>
 
 <header>
@@ -186,7 +223,6 @@ font-size:22px;
 <p>Guías, trucos y estrategias de Free Fire</p>
 </header>
 
-<!-- 🔥 AVISO -->
 <div style="background:#fff3cd;color:#856404;padding:10px;text-align:center;font-size:14px;">
 Este sitio ofrece información educativa sobre Free Fire. No está afiliado oficialmente con el juego.
 </div>
@@ -199,110 +235,58 @@ Este sitio ofrece información educativa sobre Free Fire. No está afiliado ofic
 <a href="#">Sensibilidad</a>
 <a href="contacto.html">Contacto</a>
 </nav>
-</nav>
 
-<!-- 🔥 HERO (PEGA AQUÍ) -->
-<div style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);padding:40px 20px;text-align:center;color:white;">
-<h2 style="margin:0;font-size:28px;">Guías PRO de Free Fire 2026</h2>
-<p style="color:#ddd;">Aprende a mejorar tu nivel, conseguir diamantes y dominar el juego</p>
+<!-- 🔥 BANNER -->
+<div class="banner">
+<div class="banner-content">
+<h2>Zona Gaming Pro</h2>
+<p>Trucos, guías y estrategias para dominar Free Fire</p>
 <a href="codigos.html" class="btn">Ver códigos</a>
 </div>
- 
 </div>
+
 <!-- 🔍 BUSCADOR -->
 <div style="text-align:center;padding:15px;background:#222;">
 <input type="text" placeholder="Buscar en la web..." style="padding:10px;width:60%;max-width:400px;border:none;border-radius:5px;">
 </div>
- <!-- 🔥 ARTÍCULOS DESTACADOS -->
-<div style="max-width:1100px;margin:20px auto;padding:10px;">
-<h2>Artículos destacados</h2>
 
-<div style="display:flex;gap:20px;flex-wrap:wrap;">
-
-<div style="flex:1;min-width:250px;background:white;padding:15px;border-radius:10px;">
-<img src="codigos1.jpg">
-<h3>Códigos actualizados</h3>
-<a href="codigos.html" class="btn">Ver más</a>
-</div>
-
-<div style="flex:1;min-width:250px;background:white;padding:15px;border-radius:10px;">
-<img src="diamantes1.jpg">
-<h3>Diamantes gratis</h3>
-<a href="index.html" class="btn">Ver más</a>
-</div>
-
-</div>
 <div class="main">
 
 <div class="content">
 
 <h2>Cómo obtener diamantes gratis en Free Fire</h2>
 
-<img src="diamantes1.jpg" alt="como conseguir diamantes gratis en free fire 2026">
+<img src="diamantes1.jpg">
 
-<p>Los diamantes en Free Fire son la moneda más importante del juego, ya que permiten desbloquear contenido exclusivo como skins, personajes y ventajas dentro del juego.</p>
-
-<p>Muchos jugadores buscan formas de obtener diamantes gratis, pero es importante conocer los métodos reales y seguros para evitar perder la cuenta o caer en estafas.</p>
-
-<a href="codigos.html" class="btn">Ver códigos actualizados</a>
+<p>Los diamantes en Free Fire son la moneda más importante del juego...</p>
 
 <div class="ads">Espacio publicitario</div>
 
 <h3>Métodos reales para conseguir diamantes</h3>
 
-<img src="diamantes2.jpg" alt="eventos y recompensas free fire">
+<img src="diamantes2.jpg">
 
-<p>Existen diferentes formas legales de conseguir recompensas dentro del juego. La clave está en aprovechar los eventos y oportunidades oficiales que se activan constantemente.</p>
-
-<h3>Eventos dentro del juego</h3>
-
-<p>Free Fire lanza eventos con frecuencia donde puedes obtener recompensas gratis. Participar activamente en estos eventos es una de las mejores formas de avanzar.</p>
-
-<p>Estos eventos incluyen misiones diarias, recompensas por inicio de sesión y desafíos especiales.</p>
+<p>Existen diferentes formas legales...</p>
 
 <div class="ads">Publicidad</div>
 
 <h3>Aplicaciones de recompensas</h3>
 
-<img src="diamantes3.jpg" alt="apps para ganar diamantes free fire">
+<img src="diamantes3.jpg">
 
-<p>Existen aplicaciones que permiten ganar dinero o tarjetas de regalo realizando tareas simples. Estas recompensas pueden usarse dentro del juego.</p>
+<p>Existen aplicaciones...</p>
 
-<h3>Evita los generadores de diamantes</h3>
+<h3>Evita los generadores</h3>
 
-<img src="diamantes4.jpg" alt="generadores de diamantes free fire peligro">
+<img src="diamantes4.jpg">
 
-<p>Los generadores de diamantes son una de las principales estafas. Estas páginas prometen recompensas ilimitadas, pero en realidad buscan robar cuentas o información personal.</p>
+<p>Los generadores son estafas...</p>
 
 <div class="ads">Publicidad</div>
 
-<h3>Estrategias para avanzar más rápido</h3>
-
-<p>Para mejorar tu progreso dentro del juego, es recomendable combinar diferentes métodos y mantener una rutina constante.</p>
-
-<p>También puedes mejorar tu rendimiento revisando nuestras guías:</p>
-
-<p><a href="armas.html">Mejores armas en Free Fire</a></p>
-<p><a href="heroico.html">Cómo subir a héroico rápido</a></p>
-
-<h3>Consejos finales para mejorar tu cuenta</h3>
-
-<p>Para avanzar más rápido en Free Fire, es importante combinar diferentes estrategias. No dependas de un solo método, ya que el juego constantemente cambia y ofrece nuevas oportunidades.</p>
-
-<p>Además, mantenerse informado sobre eventos y actualizaciones te permitirá aprovechar recompensas que muchos jugadores dejan pasar.</p>
-
-<!-- 🔗 ARTÍCULOS RELACIONADOS -->
-<h3>Artículos relacionados</h3>
-
-<ul>
-<li><a href="codigos.html">Códigos actualizados de Free Fire</a></li>
-<li><a href="armas.html">Mejores armas para ganar partidas</a></li>
-<li><a href="heroico.html">Cómo subir a héroico rápido</a></li>
-</ul>
-
 <h3>Conclusión</h3>
 
-<p>Conseguir diamantes gratis es posible si utilizas métodos legales y seguros. La clave está en la constancia, la información y evitar prácticas peligrosas.</p>
+<p>Conseguir diamantes gratis es posible...</p>
 
 </div>
 
@@ -317,12 +301,6 @@ Este sitio ofrece información educativa sobre Free Fire. No está afiliado ofic
 
 <div class="card ads">Publicidad</div>
 
-<div class="card">
-<h3>Guías populares</h3>
-<p>Cómo ganar partidas</p>
-<p>Errores comunes</p>
-</div>
-
 </div>
 
 </div>
@@ -331,10 +309,8 @@ Este sitio ofrece información educativa sobre Free Fire. No está afiliado ofic
 <p>© 2026 Zona Gaming Pro</p>
 </footer>
 
-<!-- 🔝 BOTÓN -->
-<a href="#" style="position:fixed;bottom:20px;right:20px;background:#00ffcc;color:#000;padding:10px 15px;border-radius:50%;text-decoration:none;font-weight:bold;">↑</a>
+<a href="#" style="position:fixed;bottom:20px;right:20px;background:#00ffcc;color:#000;padding:10px 15px;border-radius:50%;">↑</a>
 
-<!-- 🔥 SCRIPT -->
 <script>
 window.onscroll = function() {
 let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
