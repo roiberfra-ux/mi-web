@@ -31,17 +31,14 @@ background:#00ffcc;
 z-index:9999;
 }
 
-header {
-background:linear-gradient(90deg,#0f2027,#203a43,#2c5364);
-padding:30px;
-text-align:center;
-color:white;
-}
-
+/* 🔥 NAV */
 nav {
 background:#111;
 padding:12px;
 text-align:center;
+position:sticky;
+top:0;
+z-index:999;
 }
 
 nav a {
@@ -56,10 +53,10 @@ nav a:hover {
 color:#00ffcc;
 }
 
-/* 🔥 BANNER NUEVO */
+/* 🔥 BANNER PRO */
 .banner {
 position:relative;
-height:320px;
+height:380px;
 background:url("banner.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
@@ -69,37 +66,75 @@ color:white;
 overflow:hidden;
 }
 
+/* OSCURECER */
 .banner::before {
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
 }
 
+/* EFECTO BRILLO */
+.banner::after {
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:radial-gradient(circle, rgba(0,255,204,0.2), transparent 60%);
+animation:moveGlow 6s infinite linear;
+}
+
+@keyframes moveGlow {
+0% {transform:translate(-30%,-30%);}
+50% {transform:translate(30%,30%);}
+100% {transform:translate(-30%,-30%);}
+}
+
+/* CONTENIDO */
 .banner-content {
 position:relative;
 z-index:2;
-animation:fadeIn 1.5s ease;
+animation:fadeUp 1.5s ease;
 }
 
 .banner h2 {
-font-size:34px;
+font-size:40px;
 margin:0;
+letter-spacing:1px;
 }
 
 .banner p {
-color:#ddd;
+color:#ccc;
 margin-top:10px;
 }
 
-@keyframes fadeIn {
-from {opacity:0; transform:translateY(20px);}
+@keyframes fadeUp {
+from {opacity:0; transform:translateY(30px);}
 to {opacity:1; transform:translateY(0);}
 }
 
+/* BOTÓN */
+.btn {
+display:inline-block;
+background:#00ffcc;
+color:#000;
+padding:14px 25px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+transition:0.3s;
+box-shadow:0 0 10px #00ffcc;
+}
+
+.btn:hover {
+background:#00ccaa;
+transform:scale(1.05);
+box-shadow:0 0 20px #00ffcc;
+}
+
+/* MAIN */
 .main {
 display:flex;
 max-width:1100px;
@@ -129,6 +164,7 @@ border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.08);
 }
 
+/* IMÁGENES */
 img {
 width:100%;
 margin:20px 0;
@@ -140,6 +176,7 @@ img:hover {
 transform:scale(1.03);
 }
 
+/* ADS */
 .ads {
 background:#eee;
 text-align:center;
@@ -154,22 +191,7 @@ border-left:5px solid #00ffcc;
 padding-left:10px;
 }
 
-.btn {
-display:inline-block;
-background:#00ffcc;
-color:#000;
-padding:12px 20px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-margin:10px 0;
-transition:0.3s;
-}
-
-.btn:hover {
-background:#00ccaa;
-}
-
+/* FOOTER */
 footer {
 background:#111;
 color:white;
@@ -178,35 +200,23 @@ padding:20px;
 margin-top:30px;
 }
 
-/* 📱 RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
 
 .main {
 flex-direction: column;
-padding:10px;
 }
 
-.content {
+.content, .sidebar {
 width:100%;
-padding:15px;
-}
-
-.sidebar {
-width:100%;
-padding:10px;
-}
-
-nav a {
-display:block;
-margin:8px 0;
 }
 
 .banner {
-height:200px;
+height:250px;
 }
 
 .banner h2 {
-font-size:22px;
+font-size:26px;
 }
 
 }
@@ -218,7 +228,7 @@ font-size:22px;
 
 <div id="progressBar"></div>
 
-<!-- 🔥 BANNER -->
+<!-- 🔥 BANNER PRO -->
 <div class="banner">
 <div class="banner-content">
 <h2>Zona Gaming Pro</h2>
@@ -226,6 +236,7 @@ font-size:22px;
 <a href="codigos.html" class="btn">Ver códigos</a>
 </div>
 </div>
+
 <nav>
 <a href="index.html">Inicio</a>
 <a href="armas.html">Armas</a>
@@ -234,7 +245,8 @@ font-size:22px;
 <a href="#">Sensibilidad</a>
 <a href="contacto.html">Contacto</a>
 </nav>
-<!-- 🔍 BUSCADOR -->
+
+<!-- BUSCADOR -->
 <div style="text-align:center;padding:15px;background:#222;">
 <input type="text" placeholder="Buscar en la web..." style="padding:10px;width:60%;max-width:400px;border:none;border-radius:5px;">
 </div>
